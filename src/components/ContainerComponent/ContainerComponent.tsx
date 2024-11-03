@@ -22,22 +22,15 @@ const ContainerComponent = () => {
       const newThing: Thing = {...things[0], name: "Third"};
       things.splice(0, 1);
       console.log(`Spliced things ${JSON.stringify(things)}`);
-      const newThings = [...things, newThing];
+      const newThings = [newThing, ...things];
       console.log(`Updated things ${JSON.stringify(newThings)}`);
       setThings(newThings);
+
+      // setThings(things.toSpliced(0, 1, {...things[0], name: "Third"}));
    }
 
    useEffect(() => {
-      const initialThings: Thing[] = [
-         {
-            id: 1,
-            name: "First",
-         },
-         {
-            id: 2,
-            name: "Second",
-         }
-      ]
+      const initialThings: Thing[] = [ { id: 1, name: "First" }, { id: 2, name: "Second"} ];
       setThings(initialThings);
    }, []);
 
