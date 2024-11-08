@@ -20,10 +20,8 @@ const ContainerComponent = () => {
       // setThings(things);
 
       const newThing: Thing = {...things[0], name: "Third"};
-      things.splice(0, 1);
-      console.log(`Spliced things ${JSON.stringify(things)}`);
-      const newThings = [newThing, ...things];
-      console.log(`Updated things ${JSON.stringify(newThings)}`);
+      const newThings = [...things];
+      newThings.splice(0, 1, newThing);
       setThings(newThings);
 
       // setThings(things.toSpliced(0, 1, {...things[0], name: "Third"}));

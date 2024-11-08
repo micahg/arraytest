@@ -1,4 +1,5 @@
 import { Thing } from "../../models/thing";
+import { memo } from "react";
 
 interface ContentComponentProps {
    thing: Thing
@@ -14,4 +15,4 @@ const ContentComponent = ({thing}: ContentComponentProps) => {
    );
 };
 
-export default ContentComponent;
+export default memo(ContentComponent);
